@@ -7,3 +7,4 @@ class Die:
 
     def roll(self):
         return randint(1, self.num_sides)
+
