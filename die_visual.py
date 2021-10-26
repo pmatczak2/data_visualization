@@ -25,7 +25,7 @@ data = [Bar(x=x_values, y=frequencies)]  # Bar() represents a data set that will
 
 x_axis_config = {'title': 'Result', 'dtick': 1} # Layout() returns object specified, configuration of the graph as a whole
 y_axis_config = {'title': 'Frequency of Result'}
-my_layout = Layout(title='Results of rolling two D6 50,000 times',
+my_layout = Layout(title='Results of rolling two D10 50,000 times',
                    xaxis=x_axis_config, yaxis=y_axis_config) # Set the title of graph, configuration dictionary
 offline.plot({'data': data, 'layout': my_layout}, filename='d6_d10.html') # offline.plot need dictionary containing the data
             #and also accepts a dictionary containing the data and layout objects also the name where file will be saved
