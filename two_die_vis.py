@@ -23,3 +23,8 @@ for value in range(2, max_result+1):
 x_values = list(range(2, max_result+1))
 data = [Bar(x=x_values, y=frequencies)]
 
+x_axis_config = {'title': 'Results', 'dtick': 1}
+y_axis_config = {'Title': 'Frequency of Result'}
+my_layout = Layout(title='Result of rolling two D8 die 1000 times',
+                   xaxis=x_axis_config, yaxis=y_axis_config)
+offline.plot({'data': data, 'layout': my_layout}, filename='d8_html')
