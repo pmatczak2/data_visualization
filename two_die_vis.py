@@ -15,11 +15,8 @@ for roll_num in range(1_000_000):
     results.append(result)
 
 # Analyze the results.
-frequencies = []
 max_result = die_1.num_sides * die_2.num_sides
-for value in range(2, max_result+1):
-    frequency = results.count(value)
-    frequencies.append(frequency)
+frequencies = [results.count(value) for value in range(2, max_result+1)]
 
 # Visualize the results.
 x_values = list(range(2, max_result+1))
