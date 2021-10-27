@@ -8,5 +8,3 @@ class TwoD8:
     def roll(self):
         return randint(1, self.num_sides)
 
-d8 = TwoD8()
-print(d8.roll())
