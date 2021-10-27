@@ -8,7 +8,7 @@ die_2 = TwoD8()
 
 # Make some rolls, and store results in a list
 results = []
-for roll_num in range(10_000):
+for roll_num in range(1000):
     result = die_1.roll() + die_2.roll()
     results.append(result)
 
