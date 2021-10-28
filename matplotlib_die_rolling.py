@@ -2,17 +2,25 @@ import matplotlib.pyplot as plt
 
 from two_D8 import TwoD8
 
-die_1 = TwoD8()
-die_2 = TwoD8()
+die = TwoD8()
 
-results = []
-for roll_num in range(1000):
-    result = die_1.roll() + die_2.roll()
-    results.append(result)
 
-td = TwoD8()
-td.roll()
+# Roll the dice!
+for roll_number in range(1000):
+    result = die.roll()
 
-plt.style.use('classic')
-fig, ax = plt.subplots()
-ax.scatter(results, results, s=15)
+# Show results of rolling a 6-sided die 1000 times.
+    x_values = list(range(1, 7))
+    y_values = [x/6 + die.roll() for x in x_values]
+
+plt.scatter(x_values, y_values, s=50)
+
+# Set chart title and label axes.
+plt.title("Results of rolling one D6 1000 times", fontsize=24)
+plt.xlabel("Result", fontsize=14)
+plt.ylabel("Frequency of Result", fontsize=14)
+
+# Set the range for each axis.
+plt.axis([0, 7, -10, 10])
+
+plt.show()
