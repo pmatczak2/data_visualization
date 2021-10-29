@@ -1,19 +1,20 @@
 import matplotlib.pyplot as plt
-
 from two_D8 import TwoD8
 
 die = TwoD8()
 
 
 # Roll the dice!
-for roll_number in range(1000):
+for roll_number in range(1001):
     result = die.roll()
 
 # Show results of rolling a 6-sided die 1000 times.
     x_values = list(range(1, 7))
     y_values = [x/6 + die.roll() for x in x_values]
 
-plt.scatter(x_values, y_values, s=50)
+plt.style.use('seaborn')
+fig, ax = plt.subplots()
+plt.scatter(x_values, y_values, s=45)
 
 # Set chart title and label axes.
 plt.title("Results of rolling one D6 1000 times", fontsize=24)
