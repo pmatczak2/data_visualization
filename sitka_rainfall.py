@@ -19,9 +19,13 @@ with open(filename) as f:
 # Plot the high temperature
 plt.style.use('seaborn')
 fig, ax = plt.subplots()
-sx.plot(dates, rainfalls, c='blue')
+ax.plot(dates, rainfalls, c='blue')
 
 # Format plot
 ax.set_title("Daily rainfall for 2018", fontsize=24)
-ax.set_xlabel('', fontsizw=16)
+ax.set_xlabel('', fontsize=16)
 fig.autofmt_xdate()
+ax.set_ylabel("Daily Rainfall", fontsize=16)
+ax.tick_params(axis='both', which='major', labelsize=16)
+
+plt.show()
