@@ -3,7 +3,7 @@ from datetime import datetime
 
 import matplotlib.pyplot as plt
 
-filename = 'data/sitka_weather_2018_simple.csv'
+filename = 'data/death_valley_2018_simple.csv'
 with open(filename) as f:
     reader = csv.reader(f)
     header_row = next(reader)
@@ -12,7 +12,7 @@ with open(filename) as f:
     dates, rainfalls = [], []
     for row in reader:
         current_date = datetime.strptime(row[2], '%Y-%m-%d')
-        rainfall = int(row[5])
+        rainfall = float(row[3])
         dates.append(current_date)
         rainfalls.append(rainfall)
 
