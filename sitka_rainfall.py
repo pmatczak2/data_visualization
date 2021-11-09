@@ -12,14 +12,14 @@ with open(filename) as f:
     dates, rainfalls = [], []
     for row in reader:
         current_date = datetime.strptime(row[2], '%Y-%m-%d')
-        rainfall = [4]
+        rainfall = int(row[5])
         dates.append(current_date)
         rainfalls.append(rainfall)
 
 # Plot the high temperature
 plt.style.use('seaborn')
 fig, ax = plt.subplots()
-ax.plot(dates, rainfalls, c='blue')
+ax.plot(dates, rainfalls, c='red')
 
 # Format plot
 ax.set_title("Daily rainfall for 2018", fontsize=24)
