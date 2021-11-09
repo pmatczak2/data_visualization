@@ -29,7 +29,7 @@ with open(filename) as f:
     ax.set_title("Daily high, and low temperatures - 2018", fontsize=24)
     ax.set_xlabel('', fontsize=16)
     fig.autofmt_xdate()
-    ax.set_ylabel("Temperature (F)", fontsize=16)
+    ax.set_ylabel("Rainfall between Sitka, to Death Valley", fontsize=16)
     ax.tick_params(axis='both', which='major', labelsize=16)
 
     plt.show()
