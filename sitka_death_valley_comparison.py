@@ -8,7 +8,6 @@ def get_weather_data(filename, dates, highs, lows, date_index, high_index, low_i
         header_row = next(reader)
 
         # Get dates, and high and low temperatures from this file.
-        dates, high, lows = [], [], []
         for row in reader:
             current_date = datetime.strptime(row[date_index], '%Y-%m-%d')
             try:
@@ -21,6 +20,8 @@ def get_weather_data(filename, dates, highs, lows, date_index, high_index, low_i
                 highs.append(high)
                 lows.append(low)
 
-
-
+# Get weather data for Sitka
+file_name = 'data/sitka_weather_2018_simple.csv'
+dates, high, lows = [], [], []
+get_weather_data(file_name, dates, highs, lows, )
 
