@@ -44,7 +44,7 @@ plt.fill_between(dates, highs, lows, facecolor='blue', alpha=0.05)
 
 # Format plot.
 title = "Daily Highs and Lows Temperature - 2018"
-title += "\nSitka, AK d Death Valley, CA"
+title += "\nSitka, AK and Death Valley, CA"
 
 ax.set_title(title, fontsize=20)
 ax.set_title("Daily high, and low temperatures - 2018", fontsize=24)
