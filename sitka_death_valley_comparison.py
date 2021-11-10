@@ -37,3 +37,8 @@ file_name = 'data/death_valley_2018_simple.csv'
 dates, highs, lows = [], [], []
 get_weather_data(file_name, dates, highs, lows, date_index=2, high_index=5, low_index=6)
 
+# Add Death Valley data to current plot.
+ax.plot(dates, highs, c='red', alpha=0.3)
+ax.plot(dates, lows, c='blue', alpha=0.3)
+plt.fill_between(dates, highs, lows, facecolor='blue', alpha=0.05)
+
