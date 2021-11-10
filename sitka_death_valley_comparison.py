@@ -42,3 +42,17 @@ ax.plot(dates, highs, c='red', alpha=0.3)
 ax.plot(dates, lows, c='blue', alpha=0.3)
 plt.fill_between(dates, highs, lows, facecolor='blue', alpha=0.05)
 
+# Format plot.
+title = "Daily Highs and Lows Temperature - 2018"
+title += "\nSitka, AK d Death Valley, CA"
+
+ax.set_title(title, fontsize=20)
+ax.set_title("Daily high, and low temperatures - 2018", fontsize=24)
+plt.title(title, fontsize=24)
+plt.xlabel('', fontsize=16)
+fig.autofmt_xdate()
+plt.ylabel("Temperature (F)", fontsize=16)
+plt.tick_params(axis='both', which='major', labelsize=16)
+plt.ylim(10, 130)
+
+plt.show()
