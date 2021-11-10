@@ -22,6 +22,7 @@ def get_weather_data(filename, dates, highs, lows, date_index, high_index, low_i
 
 # Get weather data for Sitka
 file_name = 'data/sitka_weather_2018_simple.csv'
-dates, high, lows = [], [], []
-get_weather_data(file_name, dates, highs, lows, )
+dates, highs, lows = [], [], []
+get_weather_data(file_name, dates, highs, lows, date_index=2, high_index=5, low_index=6)
+
 
