@@ -31,3 +31,9 @@ fig, ax = plt.subplots()
 ax.plot(dates, highs, c='red', alpha=0.6)
 ax.plot(dates, lows, c='blue', alpha=0.6)
 plt.fill_between(dates, highs, lows, facecolor='blue', alpha=0.15)
+
+# Get weather data for Death Valley
+file_name = 'data/death_valley_2018_simple.csv'
+dates, highs, lows = [], [], []
+get_weather_data(file_name, dates, highs, lows, date_index=2, high_index=5, low_index=6)
+
