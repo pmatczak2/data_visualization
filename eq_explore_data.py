@@ -12,3 +12,11 @@ with open(readable_file, 'w') as f:
 # Making a list of all earthquakes
 all_eq_data = all_eq_data['features']
 print(len(all_eq_data))
+
+# Extracting Magnitudes
+mags = []
+for all_eq_data in all_eq_data:
+    mag = all_eq_data['properties']['mag']
+    mags.append(mag)
+
+print(mags[:10])
