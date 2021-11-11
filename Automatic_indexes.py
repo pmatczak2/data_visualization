@@ -24,7 +24,7 @@ with open(filename) as f:
             place_name = row[name_index]
             print(place_name)
 
-    current_date = datetime.strptime(row[date_index], '%Y,%m,%d')
+        current_date = datetime.strptime(row[date_index], '%Y,%m,%d')
         try:
             high = int(row[high_index])
             low = int(row[low_index])
@@ -35,3 +35,19 @@ with open(filename) as f:
             highs.append(high)
             lows.append(low)
 
+# Plot the high and low temperatures.
+plt.style.use('seaborn')
+fig, ax = plt.subplots()
+ax.plot(dates, highs, c='red', alpha=0.5)
+ax.plot(dates, lows, c='blue', alpha=0.5)
+plt.fill_between(dates, highs, lows, facecolor='blue', alpha=0.1)
+
+# Format plot.
+title = f"Daily high and low temperatures - 2018\n{place_name}"
+plt.title(title, fontsize=20)
+plt.xlabel('', fontsize=16)
+fig.autofmt_xdate()
+plt.ylabel("Temperature (F)", fontsize=16)
+plt.tick_params(axis='both', which='major', labelsize=16)
+
+plt.show()
