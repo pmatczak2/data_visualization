@@ -15,3 +15,13 @@ with open(filename) as f:
     high_index = header_row.index['TMAX']
     low_index = header_row.index['TMIN']
     name_index = header_row.index['NAME']
+
+    # Get dates, and high and low temperatures from this file.
+    dates, highs, lows = [], [], []
+    for row in reader:
+        # Grab the station name, if it's not already set.
+        if not place_name:
+            place_name = row[name_index]
+            print(place_name)
+
+
