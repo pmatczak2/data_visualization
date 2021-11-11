@@ -24,4 +24,14 @@ with open(filename) as f:
             place_name = row[name_index]
             print(place_name)
 
+    current_date = datetime.strptime(row[date_index], '%Y,%m,%d')
+        try:
+            high = int(row[high_index])
+            low = int(row[low_index])
+        except ValueError:
+            print(f"Missing data for {current_date}")
+        else:
+            dates.append(current_date)
+            highs.append(high)
+            lows.append(low)
 
