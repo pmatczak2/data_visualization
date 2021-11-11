@@ -11,3 +11,7 @@ with open(filename) as f:
     header_row = next(reader)
     print(header_row)
 
+    date_index = header_row.index['DATE']
+    high_index = header_row.index['TMAX']
+    low_index = header_row.index['TMIN']
+    name_index = header_row.index['NAME']
