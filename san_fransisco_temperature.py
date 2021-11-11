@@ -22,9 +22,9 @@ def get_weather_data(filename, dates, highs, lows, date_index, high_index, low_i
                 lows.append(low)
 
     # Get weather data for San Fran
-file_name = 'data/san_fran_temp.csv'
+filename = 'data/san_fran_temp.csv'
 dates, highs, lows = [], [], []
-get_weather_data(file_name, dates, highs, lows, date_index=2, high_index=3, low_index=4)
+get_weather_data(filename, dates, highs, lows, date_index=2, high_index=3, low_index=4)
 
 # Plot Sitka weather data.
 plt.style.use('seaborn')
