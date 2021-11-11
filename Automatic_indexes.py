@@ -7,14 +7,14 @@ filename = 'data/sitka_weather_2018_simple.csv'
 filename = 'data/death_valley_2018_simple.csv'
 place_name = ''
 with open(filename) as f:
-    reader = csv.reader(filename)
+    reader = csv.reader(f)
     header_row = next(reader)
-    print(header_row)
 
-    date_index = header_row.index['DATE']
-    high_index = header_row.index['TMAX']
-    low_index = header_row.index['TMIN']
-    name_index = header_row.index['NAME']
+    print(header_row)
+    date_index = header_row.index('DATE')
+    high_index = header_row.index('TMAX')
+    low_index = header_row.index('TMIN')
+    name_index = header_row.index('NAME')
 
     # Get dates, and high and low temperatures from this file.
     dates, highs, lows = [], [], []
@@ -24,7 +24,7 @@ with open(filename) as f:
             place_name = row[name_index]
             print(place_name)
 
-        current_date = datetime.strptime(row[date_index], '%Y,%m,%d')
+        current_date = datetime.strptime(row[date_index], '%Y-%m-%d')
         try:
             high = int(row[high_index])
             low = int(row[low_index])
