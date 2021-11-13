@@ -13,8 +13,7 @@ with open(readable_file, 'w') as f:
 all_eq_data = all_eq_data['features']
 print(len(all_eq_data))
 
-# Extracting Magnitudes
-# Extracting Location Data
+# Extracting Location Data & Extracting Magnitudes
 mags, lons, lats = [], [], []
 for eq_dict in all_eq_data:
     mag = eq_dict['properties']['mag']
