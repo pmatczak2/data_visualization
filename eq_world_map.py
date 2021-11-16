@@ -5,7 +5,6 @@ from plotly import offline
 
 
 # Explore the structure of the data
-filename = 'data/eq_data_1_day_m1.json'
 filename = 'data/eq_data_30_day_m1.json'
 with open(filename) as f:
     all_eq_data = json.load(f)
@@ -39,7 +38,7 @@ data = [{
     'lat': lats,
     'marker': {
         'size': [5*mag for mag in mags],
-        'color': mags,
+        'color': mags,  # Customizing Marker Colors
         'colorscale': "Viridis",
         'reversescale': True,
         'colorbar': {'title': 'Magnitude'},
