@@ -28,6 +28,7 @@ for eq_dict in all_eq_data:
     mags.append(mag)
     lons.append(lon)
     lats.append(lat)
+    hover_text.append(title)
 
 print(mags[:10])
 print(lons[:5])
@@ -38,6 +39,7 @@ data = [{
     'type': 'scattergeo',
     'lon': lons,
     'lat': lats,
+    'text': hover_text,
     'marker': {
         'size': [5*mag for mag in mags],
         'color': mags,  # Customizing Marker Colors
