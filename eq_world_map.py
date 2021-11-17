@@ -19,7 +19,7 @@ print(len(all_eq_data))
 
 # Extracting Location Data & Extracting Magnitudes
 # adding Hover text
-mags, lons, lats, hover_text = [], [], [], []  # [
+mags, lons, lats, hover_text = [], [], [], []
 for eq_dict in all_eq_data:
     mags.append(eq_dict['properties']['mag'])
     hover_text.append(eq_dict['properties']['title'])
