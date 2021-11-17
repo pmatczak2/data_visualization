@@ -19,20 +19,13 @@ print(len(all_eq_data))
 
 # Extracting Location Data & Extracting Magnitudes
 # adding Hover text
-mags, lons, lats, hover_text = [], [], [], []
+mags, lons, lats, hover_text = [], [], [], []  # [
 for eq_dict in all_eq_data:
-    mag = eq_dict['properties']['mag']
-    title = eq_dict['properties']['title']
-    lon = eq_dict['geometry']['coordinates'][0]
-    lat = eq_dict['geometry']['coordinates'][1]
-    mags.append(mag)
-    lons.append(lon)
-    lats.append(lat)
-    hover_text.append(title)
+    mags.append(eq_dict['properties']['mag'])
+    hover_text.append(eq_dict['properties']['title'])
+    lons.append(eq_dict['geometry']['coordinates'][0])
+    lats.append(eq_dict['geometry']['coordinates'][1])
 
-print(mags[:10])
-print(lons[:5])
-print(lats[:5])
 
 # Map the Earthquakes
 data = [{
