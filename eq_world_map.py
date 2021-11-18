@@ -15,20 +15,20 @@ all_eq_dicts = all_eq_data['features']
 
 # Extracting Location Data & Extracting Magnitudes
 # adding Hover text
-mags, lons, lats, hover_text = [], [], [], []
-for eq_dict in all_eq_data:
+mags, lons, lats, hover_texts = [], [], [], []
+for eq_dict in all_eq_dicts:
+
     mags.append(eq_dict['properties']['mag'])
-    hover_text.append(eq_dict['properties']['title'])
     lons.append(eq_dict['geometry']['coordinates'][0])
     lats.append(eq_dict['geometry']['coordinates'][1])
-
+    hover_texts.append(eq_dict['properties']['title'])
 
 # Map the Earthquakes
 data = [{
     'type': 'scattergeo',
     'lon': lons,
     'lat': lats,
-    'text': hover_text,
+    'text': hover_texts,
     'marker': {
         'size': [5*mag for mag in mags],
         'color': mags,  # Customizing Marker Colors
