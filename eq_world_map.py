@@ -9,13 +9,9 @@ filename = 'data/eq_data_30_day_m1.json'
 with open(filename) as f:
     all_eq_data = json.load(f)
 
-readable_file = 'data/readable_eq_data.json'
-with open(readable_file, 'w') as f:
-    json.dump(all_eq_data, f, indent=4)
+title = all_eq_data['metadata']['title']
+all_eq_dicts = all_eq_data['features']
 
-# Making a list of all earthquakes
-all_eq_data = all_eq_data['features']
-print(len(all_eq_data))
 
 # Extracting Location Data & Extracting Magnitudes
 # adding Hover text
@@ -41,7 +37,8 @@ data = [{
         'colorbar': {'title': 'Magnitude'},
     },
 }]
-my_layout = Layout(title='Global Earthquake')
+
+my_layout = Layout(title=title)
 
 fig = {'data': data, 'layout': my_layout}
 offline.plot(fig, filename='global_earthquakes.html')
