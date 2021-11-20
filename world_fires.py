@@ -29,3 +29,6 @@ with open(filename) as f:
         if row_num == num_rows:
             break
 
+# Map the world fires
+
+
