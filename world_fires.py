@@ -30,5 +30,10 @@ with open(filename) as f:
             break
 
 # Map the world fires
+data = [Scattergeo(lon=lons, lat=lats)]
+my_layout = Layout(title='World Fires')
+
+fig = {'data':data, 'layout':my_layout}
+offline.plot(fig, filename='world_fires.html')
 
 
